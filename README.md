@@ -13,7 +13,7 @@
 </p>
 
 ## Description
-`CurrencyProviding` is a SwiftUI library that allows users to select a currency for an application.
+`CurrencyProviding` is a SwiftUI library that allows users to select a currency for an application. <br>
 The selected currency will be used for icons, strings, and text fields throughout the application.
 
 <br>
