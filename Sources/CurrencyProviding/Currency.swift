@@ -46,7 +46,7 @@ public enum Currency: String, Identifiable, Hashable, CaseIterable {
 
     // MARK: Symbol
     /// The symbol representation of the currency.
-    var symbol: String {
+    public var symbol: String {
         switch self {
         case .austral:
             return "₳"
@@ -115,7 +115,7 @@ public enum Currency: String, Identifiable, Hashable, CaseIterable {
 
     // MARK: Title
     /// The title representation of the currency symbol.
-    var title: String {
+    public var title: String {
         switch self {
         case .austral:
             return "Austral"
@@ -184,7 +184,7 @@ public enum Currency: String, Identifiable, Hashable, CaseIterable {
 
     // MARK: System Name
     /// The system name representation of the currency symbol.
-    var systemName: String {
+    public var systemName: String {
         switch self {
         case .austral:
             return "australsign"
@@ -253,7 +253,7 @@ public enum Currency: String, Identifiable, Hashable, CaseIterable {
 
     // MARK: Currency Code
     /// The currency code representation of the currency symbol.
-    var currencyCode: String {
+    public var currencyCode: String {
         switch self {
         case .austral:
             return "ARS"
