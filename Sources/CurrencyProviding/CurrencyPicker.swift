@@ -39,6 +39,8 @@ public struct CurrencyPicker: View {
                        by: { String($0.title.prefix(1)) })
             .map { (title: $0.key, currencies: $0.value) }
             .sorted { $0.title < $1.title }
+        } else if isContentUnavailableViewShowing {
+            [("", [])]
         } else {
             [("Search Results", filteredCurrencies)]
         }
