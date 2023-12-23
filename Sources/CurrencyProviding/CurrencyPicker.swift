@@ -9,6 +9,8 @@ import SwiftUI
 public struct CurrencyPicker: View {
     @Environment(CurrencyProvider.self)
     private var currencyProvider
+    @Environment(\.dismiss)
+    private var dismiss
     @State private var searchText = ""
     private let mostPopular: [Currency]
 
@@ -49,7 +51,7 @@ public struct CurrencyPicker: View {
 
     // MARK: Body
     public var body: some View {
-        VStack {
+        NavigationStack {
             List {
                 mostPopularSection
                 ForEach(currencySections, id: \.title) { section in
@@ -60,15 +62,22 @@ public struct CurrencyPicker: View {
                     }
                 }
             }
+            .navigationTitle("Currency Selection")
+            .navigationBarTitleDisplayMode(.inline)
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: Text("Search for a currency"))
             .overlay {
                 if isContentUnavailableViewShowing {
                     ContentUnavailableView.search(text: searchText)
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
         }
-        .navigationTitle("Currency Selection")
-        .searchable(text: $searchText,
-                    prompt: Text("Search for a currency"))
     }
 
     private func selectableCell(_ currency: Currency) -> some View {
@@ -96,7 +105,12 @@ public struct CurrencyPicker: View {
 
 // MARK: Previews
 #Preview("Currency Selection") {
-    CurrencyPicker(mostPopular: [.dollar, .euro, .indianrupee])
-        .frame(height: 600)
-        .environment(CurrencyProvider())
+    @State var isPresented = true
+    return VStack {
+        Spacer()
+    }
+    .sheet(isPresented: $isPresented) {
+        CurrencyPicker(mostPopular: [.dollar, .euro, .indianrupee])
+            .environment(CurrencyProvider())
+    }
 }

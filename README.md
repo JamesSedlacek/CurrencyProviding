@@ -9,7 +9,8 @@
 
 
 <p align="left">
-  <img src = "https://github.com/JamesSedlacek/CurrencyProviding/blob/main/Assets/CurrencyPicker.png" width="500">
+  <img src = "https://github.com/JamesSedlacek/CurrencyProviding/blob/main/Assets/CurrencyPicker_Light.png" width="350">
+  <img src = "https://github.com/JamesSedlacek/CurrencyProviding/blob/main/Assets/CurrencyPicker_Dark.png" width="350">
 </p>
 
 ## Description

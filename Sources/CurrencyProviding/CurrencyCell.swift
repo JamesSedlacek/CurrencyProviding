@@ -16,7 +16,7 @@ struct CurrencyCell: View {
     }
 
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 16) {
             Image(systemName: currency.systemName)
                 .font(.title2)
                 .fontWeight(.semibold)
@@ -37,8 +37,7 @@ struct CurrencyCell: View {
                     .foregroundStyle(Color.accentColor)
             }
         }
-        .frame(height: 40)
-        .padding()
+        .padding(.vertical, 6)
     }
 }
 
