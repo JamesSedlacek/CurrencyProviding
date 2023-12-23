@@ -1,8 +1,22 @@
 # CurrencyProviding
 
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![GitHub stars](https://img.shields.io/github/stars/JamesSedlacek/CurrencyProviding.svg)](https://github.com/JamesSedlacek/CurrencyProviding/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/JamesSedlacek/CurrencyProviding.svg?color=blue)](https://github.com/JamesSedlacek/CurrencyProviding/network)
+[![GitHub contributors](https://img.shields.io/github/contributors/JamesSedlacek/CurrencyProviding.svg?color=blue)](https://github.com/JamesSedlacek/CurrencyProviding/network)
+<a href="https://github.com/JamesSedlacek/CurrencyProviding/pulls"><img src="https://img.shields.io/github/issues-pr/JamesSedlacek/CurrencyProviding" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/JamesSedlacek/CurrencyProviding/issues"><img src="https://img.shields.io/github/issues/JamesSedlacek/CurrencyProviding" alt="Issues Badge"/></a>
+
+
+<p align="left">
+  <img src = "https://github.com/JamesSedlacek/CurrencyProviding/blob/main/Assets/CurrencyPicker.png" width="500">
+</p>
+
 ## Description
 `CurrencyProviding` is a SwiftUI library that allows users to select a currency for an application.
 The selected currency will be used for icons, strings, and text fields throughout the application.
+
+<br>
 
 ## Requirements
 
@@ -43,6 +57,8 @@ struct ContentView: View {
 }
 ```
 
+<br>
+
 2. Add `CurrencyPicker` to the settings screen in your project.
 ```swift
 import CurrencyProviding
@@ -63,6 +79,8 @@ struct SettingsView {
     }
 }
 ```
+
+<br>
 
 3. Use `CurrencyProvider` for Icons, Strings, and TextFields.
 ```swift
@@ -88,6 +106,8 @@ struct ExampleView: View {
     }
 }
 ```
+
+<br>
 
 ## Author
 
