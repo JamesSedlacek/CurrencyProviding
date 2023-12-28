@@ -66,15 +66,8 @@ import CurrencyProviding
 import SwiftUI
 
 struct SettingsView {
-    @State private var isCurrencyPickerPresented: Bool = false
-
     var body: some View {
         VStack {
-            Button("Select Currency") {
-                isCurrencyPickerPresented = true
-            }
-        }
-        .sheet(isPresented: $isCurrencyPickerPresented) {
             CurrencyPicker()
         }
     }
