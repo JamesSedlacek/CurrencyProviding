@@ -256,7 +256,7 @@ public enum Currency: String, Identifiable, Hashable, CaseIterable {
     public var currencyCode: String {
         switch self {
         case .austral:
-            return "ARS"
+            return "ARA"
         case .baht:
             return "THB"
         case .brazilianreal:
