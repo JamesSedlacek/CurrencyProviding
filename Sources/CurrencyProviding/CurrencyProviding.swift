@@ -20,6 +20,10 @@ public extension CurrencyProviding {
     
     /// Returns an SF Symbol Image for the currency, optionally with a circle.
     func icon(withCircle: Bool = false) -> Image {
-        Image(systemName: currency.systemName + ".circle")
+        return if withCircle {
+            Image(systemName: currency.systemName + ".circle")
+        } else {
+            Image(systemName: currency.systemName)
+        }
     }
 }
