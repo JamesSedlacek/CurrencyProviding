@@ -22,7 +22,6 @@ The selected currency will be used for icons, strings, and text fields throughou
 ## Requirements
 
 - **iOS**: 17.0 or later.
-- **macOS**: 14.0 or later.
 
 <br>
 

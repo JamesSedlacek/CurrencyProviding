@@ -57,11 +57,14 @@ public struct CurrencySheet: View {
             List {
                 mostPopularSection
                 ForEach(currencySections, id: \.title) { section in
-                    Section(section.title) {
+                    Section(content: {
                         ForEach(section.currencies) { currency in
                             selectableCell(currency)
                         }
-                    }
+                    }, header: {
+                        Text(section.title.capitalized)
+                            .textCase(.none)
+                    })
                 }
             }
             .navigationTitle("Currency Selection")
@@ -96,11 +99,25 @@ public struct CurrencySheet: View {
     @ViewBuilder
     private var mostPopularSection: some View {
         if isMostPopularShowing {
-            Section("Most Popular") {
+            Section(content: {
                 ForEach(mostPopular) { currency in
                     selectableCell(currency)
                 }
-            }
+            }, header: {
+                Text("Most Popular")
+                    .textCase(.none)
+            })
         }
+    }
+}
+
+#Preview {
+    VStack {
+        Spacer()
+    }
+    .frame(maxWidth: .infinity)
+    .sheet(isPresented: .constant(true)) {
+        CurrencySheet(mostPopular: [.euro, .dollar])
+            .environment(CurrencyProvider())
     }
 }
